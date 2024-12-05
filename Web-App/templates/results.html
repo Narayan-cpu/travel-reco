@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<!--
+	Typify by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Tripwise</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Banner -->
+			<section id="banner">
+				<h2><strong>TripWise</strong> </h2>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="wrapper special">
+				<div class="inner">
+					<header class="major">
+						<h2>Hello <b>{{name}}</b>, following are your Travel Recommendations in <b>{{state}}</b>:</h2>
+
+					</header>
+					<div class="features">
+						{% for key, value in tables.iterrows() %}
+			<p style="margin: 10px">
+				<div class="xxx" style="margin-right:20px;"><b style="color:red; align-content: center;"><br><br style="align-content: center;">{{value['Title']}}</br></b></div>
+			</p>
+		    <p style="margin: 10px">
+				<div style="margin-left:20px;"><b style="color:red;">Description of the Place: </b>{{value['Description']}}</div>
+			</p>
+		    <p style="margin: 10px"><div style="margin-left:20px;"><b style="color:red;">Category: </b>{{value['Category']}}, <b style="color:red;">Route: </b> {{value['Distance (Km.)']}} Km. from {{value['Boarding_pt']}}</div>
+			</p>
+		    <p style="margin: 10px">
+				<div style="margin-left:20px; "><b style="color:red;">Budget per head: </b>Rs. {{value['Expense (Per Head in Rs.)']}}, <b style="color:red;">Duration: </b> {{value['n_days']}} Day(s) </div>
+			</p>
+		<p style="margin: 10px">
+		<div style="margin-left:20px;"><b style="color:red;">Rating: </b>{{value['Rating']}}, <b style="color:red;">Place Sentiment:</b> {{value['Place_sentiment']}}, <b style="color:red;"> Overall State Sentiment:</b> {{value['Overall_state_sentiment']}} </div>
+			</p>
+
+{% endfor %}
+						<br/>
+						<br/>
+						<h3><b>Also, checkout other recommended places for you: </b><b style="color:red; align-content: center;"><br><br style="align-content: center;">{{other_recom}}</b><br/></h3>
+						<br/>
+						<a href="http://127.0.0.1:5000">Go back to Home Page</a>
+					</div>
+				</div>
+		
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="copyright">
+					&copy;TripWise: <a href="Narayan-p-n.vercel.app"</a>.
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
