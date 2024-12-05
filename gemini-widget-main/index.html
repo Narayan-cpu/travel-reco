@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gemini Widget Bot</title>
+  <meta name="description"
+    content="GeminiWidget is an embedded web component powered by Google Gemini, providing an intelligent chatbot experience." />
+  <meta name="keywords"
+    content="GeminiWidget, chatbot, Google Gemini, AI chatbot, embedded widget, web component, conversational AI" />
+  <meta name="author" content="Amit Acharya" />
+  <meta property="og:title" content="GeminiWidget - AI Chatbot Powered by Google Gemini" />
+  <meta property="og:description"
+    content="GeminiWidget is an intelligent, embedded chatbot powered by Google Gemini, offering seamless conversational experiences." />
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+  <script src="https://gemini-widget.vercel.app/widget.umd.js"></script>
+  <gemini-chat-widget api-key="YOUR_GEMINI_API_KEY" model="gemini-1.5-flash"></gemini-chat-widget>
+</body>
+
+</html>

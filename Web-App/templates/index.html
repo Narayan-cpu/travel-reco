@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>TripWise</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icons/favicon.ico') }}"/>
+	<!-- <link rel="icon" type="image/png" href="images/icons/favicon.ico"/> -->
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+	<!-- <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css"> -->
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+	<!-- <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"> -->
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/animate/animate.css') }}">
+	<!-- <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css"> -->
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/css-hamburgers/hamburgers.min.css') }}">
+	<!-- <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css"> -->
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/animsition/css/animsition.min.css') }}">
+	<!-- <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css"> -->
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/select2/select2.min.css') }}">
+	<!-- <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css"> -->
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/daterangepicker/daterangepicker.css') }}">
+	<!-- <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css"> -->
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/util.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+	<!-- <link rel="stylesheet" type="text/css" href="css/util.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="css/main.css"> -->
+<!--===============================================================================================-->
+</head>
+<style>
+    img.bg {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+@media screen and (max-width: 1024px){
+    img.bg {
+    left: 50%;
+    margin-left: -512px; }
+}
+</style>
+<body>
+
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" method='POST' action='http://localhost:5000/form'>
+				<span class="contact100-form-title">
+				 TripWise
+				</span>
+				<div class="wrap-input100 input100-select">
+					<span class="label-input100">Name</span>
+					<div>
+						<p><input type = "text" name = "Name" required/></p>
+					</div>
+					<span class="focus-input100"></span>
+				</div>
+				<div class="wrap-input100 input100-select">
+					<span class="label-input100">Place of Visit</span>
+					<div>
+						<select class="selection-2" name="State" required>
+							<option value="" disabled selected value>Any preferred place of Visit</option>
+							<option>Andaman & Nicobar Islands</option>
+							<option>Andhra Pradesh</option>
+							<option>Delhi</option>
+							<option>Goa</option>
+							<option>Himachal Pradesh</option>
+							<option>Tamil Nadu</option>
+							<option>Uttar Pradesh</option>
+						</select>
+					</div>
+					<span class="focus-input100"></span>
+				</div>
+				<div class="wrap-input100 input100-select">
+					<span class="label-input100">Budget Per Head (INR in multiples of 1000)</span>
+					<div>
+						<p><input type = "number"  step="1" name = "Budget" required/></p>
+					</div>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 input100-select">
+					<span class="label-input100">Category (Type of place: Hill/Beach, etc.) (Please select atleast 2 categories): Required</span>
+					<div>
+<!--						<select class="selection-2" name="Category">-->
+							<input type="checkbox" value ="Nature"  name="Category"> Nature
+							<input type="checkbox" value ="Heritage"  name="Category"> Heritage
+							<input type="checkbox" value ="Pilgrimage"  name="Category"> Pilgrimage
+							<input type="checkbox" value ="Shopping"  name="Category"> Shopping
+							<input type="checkbox" value ="Adventure"  name="Category"> Adventure
+							<input type="checkbox" value ="Museum"  name="Category"> Museum
+							<input type="checkbox" value ="Waterfall"  name="Category"> Waterfall
+							<input type="checkbox" value ="Hill Station"  name="Category"> Hill Station
+							<input type="checkbox" value ="Wildlife"  name="Category"> Wildlife
+							<input type="checkbox" value ="Backwaters"  name="Category"> Backwaters
+							<input type="checkbox" value ="Park"  name="Category"> Park
+							<input type="checkbox" value ="Miscellaneous"  name="Category"> Miscellaneous
+							<input type="checkbox" value ="Beach"  name="Category"> Beach
+<!--							<option value="" disabled selected value>Select your preferred Category</option>-->
+<!--							<option>Nature</option>-->
+<!--							<option>Heritage</option>-->
+<!--							<option>Pilgrimage</option>-->
+<!--							<option>Shopping</option>-->
+<!--							<option>Adventure</option>-->
+<!--							<option>Museum</option>-->
+<!--							<option>Waterfall</option>-->
+<!--							<option>Hill Station</option>-->
+<!--							<option>Wildlife</option>-->
+<!--							<option>Backwaters</option>-->
+<!--							<option>Park</option>-->
+<!--							<option>Miscellaneous</option>-->
+<!--							<option>Beach</option>-->
+						</select>
+					</div>
+					<span class="focus-input100"></span>
+				</div>
+				<div class="wrap-input100 input100-select">
+					<span class="label-input100">Preferred No. of Days of Travel</span>
+					<div>
+						<p><input type = "number"  step="1" name = "n_days" required/></p>
+					</div>
+					<span class="focus-input100"></span>
+				</div>
+
+
+				
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn" action="https://localhost:5000/results" method="POST">
+							<span>
+								Submit
+								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</span>
+						</button >
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+	<!-- <script src="vendor/jquery/jquery-3.2.1.min.js"></script> -->
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='vendor/animsition/js/animsition.min.js') }}"></script>
+	<!-- <script src="vendor/animsition/js/animsition.min.js"></script> -->
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='vendor/bootstrap/js/popper.js') }}"></script>
+	<script src="{{ url_for('static', filename='vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+	<!-- <script src="vendor/bootstrap/js/popper.js"></script> -->
+	<!-- <script src="vendor/bootstrap/js/bootstrap.min.js"></script> -->
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='vendor/select2/select2.min.js') }}"></script>
+	<!-- <script src="vendor/select2/select2.min.js"></script>                                                    -->
+	<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='vendor/daterangepicker/moment.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='vendor/daterangepicker/daterangepicker.js') }}"></script>
+	<!-- <script src="vendor/daterangepicker/moment.min.js"></script> -->
+	<!-- <script src="vendor/daterangepicker/daterangepicker.js"></script> -->
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='vendor/countdowntime/countdowntime.js') }}"></script>
+	<!-- <script src="vendor/countdowntime/countdowntime.js"></script> -->
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+	<!-- <script src="js/main.js"></script> -->
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+</body>
+</html>
